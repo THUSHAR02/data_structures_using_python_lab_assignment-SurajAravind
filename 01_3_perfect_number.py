@@ -17,17 +17,17 @@
 ##This is followed by the perfect numbers 496 and 8128.
 
 
-number_01 = int(input("Enter a number to find out whether it is perfect or not: "))
-
-sum_of_divisors = 0
-
-for x in range(1, number_01):
-    if number_01 % x == 0:
-        sum_of_divisors += x
-if (sum_of_divisors == number_01):
-    print("The given number is perfect")
-else:
-    print("The given number is not perfect")
+##number_01 = int(input("Enter a number to find out whether it is perfect or not: "))
+##
+##sum_of_divisors = 0
+##
+##for x in range(1, number_01):
+##    if number_01 % x == 0:
+##        sum_of_divisors += x
+##if (sum_of_divisors == number_01):
+##    print("The given number is perfect")
+##else:
+##    print("The given number is not perfect")
 
 ##Output:
 ##
@@ -35,4 +35,17 @@ else:
 ##The given number is perfect
 
 ##Enter a number to find out whether it is perfect or not: 10
-##The given number is not perfect    
+##The given number is not perfect
+
+
+number_02 = 28
+
+def factors(number_02):
+    for x in range(1, number_02):
+        if number_02 % x == 0:
+            yield x
+
+print(factors(number_02))
+
+for i in factors(number_02):
+    print(i)
