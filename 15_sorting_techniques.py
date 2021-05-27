@@ -28,7 +28,7 @@ def insertion_sort(list_of_numbers):
 
 def selection_sort(list_of_numbers):
     for i in range(len(list_of_numbers)):
-        print("Iteration - ", i , "Input list = ", list_of_numbers)
+        print("Iteration - ", i+1 , "Input list = ", list_of_numbers)
         minimum_value_index = i
         for j in range(i+1, len(list_of_numbers)):
             if list_of_numbers[minimum_value_index] > list_of_numbers[j]:
@@ -41,13 +41,11 @@ def selection_sort(list_of_numbers):
 
 def bubble_sort(list_of_numbers):
     for i in range(len(list_of_numbers)-1):
-        print("Iteration - ", i , "Input list = ", list_of_numbers)
+        print("Iteration - ", i+1 , "Input list = ", list_of_numbers)
         for j in range(0, len(list_of_numbers)-i-1):
             if list_of_numbers[j] > list_of_numbers[j+1] :
                 list_of_numbers[j], list_of_numbers[j+1] = list_of_numbers[j+1], list_of_numbers[j]
-
-
-
+            
 
 
 # Python program for implementation of Quicksort Sort
@@ -63,21 +61,55 @@ def partition(list_of_numbers, low, high):
 
 
 def quick_sort(list_of_numbers, low, high):
-    
-    print(list_of_numbers)
+    global counter
+    print("Iteration - ", counter , "Input list = ",list_of_numbers)
+    counter = counter + 1
     if low < high:
         partition_index = partition(list_of_numbers, low, high)
         quick_sort(list_of_numbers, low, partition_index - 1)
         quick_sort(list_of_numbers, partition_index + 1, high)
+        #print(list_of_numbers)
+
+
+# Python program for implementation of MergeSort
+def merge_sort(list_of_numbers):
+    global counter
+    print("Iteration - ", counter , "Input list = ",list_of_numbers)
+    counter = counter + 1
+    if len(list_of_numbers) > 1:
+        middle_index = len(list_of_numbers)//2
+        left_sublist = list_of_numbers[:middle_index]
+        right_sublist = list_of_numbers[middle_index:]
+        merge_sort(left_sublist)
+        merge_sort(right_sublist)
+
+        i = j = k = 0
+        while i < len(left_sublist) and j < len(right_sublist):
+            if left_sublist[i] < right_sublist[j]:
+                list_of_numbers[k] = left_sublist[i]
+                i += 1
+            else:
+                list_of_numbers[k] = right_sublist[j]
+                j += 1
+            k += 1
+        while i < len(left_sublist):
+            list_of_numbers[k] = left_sublist[i]
+            i += 1
+            k += 1
+        while j < len(right_sublist):
+            list_of_numbers[k] = right_sublist[j]
+            j += 1
+            k += 1
 
 
 list_of_numbers = [19, 1, 11, 13, 5, 6, 9]
+counter=1            
 
 ##insertion_sort(list_of_numbers)
 ##selection_sort(list_of_numbers)
 ##bubble_sort(list_of_numbers)
-quick_sort(list_of_numbers, 0, len(list_of_numbers)-1)
-
+##quick_sort(list_of_numbers, 0, len(list_of_numbers)-1)
+merge_sort(list_of_numbers)
 
 
 
