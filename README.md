@@ -7,7 +7,7 @@ _This Lab provides hands-on experience in designing, implementing, and using the
 
 1. Python sample programs for practice
 
-   - Find minimum among three numbers.
+   - [Find minimum among three numbers.](01_1_min_3_numbers.py)
    - Find the GCD and LCM of two/three numbers
    - Check whether the given number is perfect
    - Print Twin Primes up to a Specified limit.
