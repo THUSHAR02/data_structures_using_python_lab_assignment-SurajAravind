@@ -8,7 +8,7 @@ _This Lab provides hands-on experience in designing, implementing, and using the
 1. Python sample programs for practice
 
    - [Find minimum among three numbers.](01_1_min_3_numbers.py)
-   - [Find the GCD and LCM of two/three numbers]()
+   - [Find the GCD and LCM of two/three numbers](01_2_gcd_lcm_2_numbers.py)
    - Check whether the given number is perfect
    - Print Twin Primes up to a Specified limit.
    - Print the prime numbers up to a specified limit.
