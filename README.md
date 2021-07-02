@@ -1,4 +1,4 @@
-# data_structures_with_Python_lab
+# <img src="images.jpg" width=50> data_structures_with_Python_lab
 This is a repository for Second Semester students to submit their programs of Data Structures with Python lab
 
 _This Lab provides hands-on experience in designing, implementing, and using the most-commonly used data structures including arrays, stacks, queues, linked lists, trees, hash tables and graphs. Implementation different searching and sorting algorithms is also done._
