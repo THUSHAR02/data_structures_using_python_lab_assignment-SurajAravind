@@ -3,7 +3,8 @@
     - Selection Sort
     - Bubble Sort
     - Merge Sort
-    - Quick Sort 
+    - Quick Sort
+    - Heap Sort
     [Compare with Python's Built-In Sorting Functions also]  """
 
 # Write your code from here
@@ -102,6 +103,46 @@ def merge_sort(list_of_numbers):
             k += 1
 
 
+# Python program for implementation of heap Sort
+
+# To heapify subtree rooted at index i.
+# n is size of heap
+
+
+def heapify(arr, n, i):
+    global counter
+    print("Iteration - ", counter , "Input list = ",arr)
+    counter = counter + 1
+    largest = i # Initialize largest as root
+    l = 2 * i + 1	 # left = 2*i + 1
+    r = 2 * i + 2	 # right = 2*i + 2
+
+    # See if left child of root exists and is
+    # greater than root
+    if l < n and arr[largest] < arr[l]:
+        largest = l
+
+    # See if right child of root exists and is
+    # greater than root
+    if r < n and arr[largest] < arr[r]:
+        largest = r
+        # Change root, if needed
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i] # swap
+        # Heapify the root.
+        heapify(arr, n, largest)
+
+def heap_sort(arr):
+    n = len(arr)
+    # Build a maxheap.
+    for i in range(n//2 - 1, -1, -1):
+        heapify(arr, n, i)
+    # One by one extract elements
+    for i in range(n-1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i] # swap
+        heapify(arr, i, 0)
+
+
 list_of_numbers = [19, 1, 11, 13, 5, 6, 9]
 counter=1            
 
@@ -109,8 +150,8 @@ counter=1
 ##selection_sort(list_of_numbers)
 ##bubble_sort(list_of_numbers)
 ##quick_sort(list_of_numbers, 0, len(list_of_numbers)-1)
-merge_sort(list_of_numbers)
-
+##merge_sort(list_of_numbers)
+heap_sort(list_of_numbers)
 
 
 print ("Elements after sorting: ", list_of_numbers)
